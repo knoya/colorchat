@@ -1,0 +1,486 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+.commentWrap {
+  width: 100%;
+  height: 100%;
+  font-family: Helvetica, sans-serif;
+}
+
+.commentHeader {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title {
+  width: 83.33%;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+
+.commentList {
+  max-height: 87vh;
+  overflow: scroll;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer {
+  height: 5vh;
+  width: 100%;
+}
+
+.comment {
+  border-radius: 3px;
+  margin: .2%;
+  padding: 1%;
+  font-size: .8rem;
+  display: inline-block;
+  width: 96%;
+}
+
+.author {
+  float: left;
+  font-weight: bold;
+  font-size: 1rem;
+  display: block;
+}
+
+.date {
+  float: right;
+  display: block;
+  padding-bottom: 5px;
+}
+
+.editDate {
+  float: right;
+  display: block;
+  clear: both;
+  padding-bottom: 5px;
+}
+
+.text {
+  float: left;
+  display: block;
+  clear: both;
+}
+
+.upDelLinks {
+  display: block;
+  padding-top: 10px;
+  clear: both;
+}
+
+.updateLink {
+  float: left;
+  display: block;
+  text-decoration: none;
+  padding-right: 15px;
+  font-size: .7rem;
+}
+
+.deleteLink {
+  float: left;
+  display: block;
+  text-decoration: none;
+  padding-right: 15px;
+  font-size: .7rem;
+  color: red;
+}
+
+.editForm {
+  padding-top: 10px;
+  display: block;
+  clear: both;
+  width: 100%;
+  background-color: rgba(0,0,0,.4);
+  border-radius: 3px;
+}
+
+.editText {
+  width: 100%;
+  height: 100%;
+}
+
+.editButtons {
+  width: 100%;
+  height: 100%;
+}
+
+.commentFormAuthor {
+  display: inline-block;
+  position: relative;
+  padding-top: 0;
+  padding-bottom: 0;
+  width: 30%;
+  max-width: 30%;
+  height: 34px;
+  margin-left: 1%;
+}
+
+.commentFormText {
+  display: inline-block;
+  position: relative;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin: 0px;
+  width: 64%;
+  max-width: 70%;
+  height: 34px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.commentFormPost {
+  width: 15%;
+  min-width: 75px;
+  max-width: 15%;
+  display: inline-block;
+  height: 40px;
+  max-height: 40px;
+  font-size: 1rem;
+  background-color: #A3CDFD;
+  border-radius: 3px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: .055rem;
+  border: none;
+  margin: 1%;
+  right: 0;
+}
+
+.commentFormPost2 {
+  width: 15%;
+  min-width: 75px;
+  max-width: 15%;
+  display: inline-block;
+  height: 40px; 
+  font-size: 1rem;
+  background-color: #3792fb;
+  border-radius: 3px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: .055rem;
+  border: none;
+  margin: 1%;
+  right: 0;
+}
+
+.commentFormClose {
+  width: 15%;
+  min-width: 75px;
+  max-width: 15%;
+  display: inline-block;
+  height: 40px;
+  font-size: 1rem;
+  background-color: #ff3333;
+  border-radius: 3px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: .055rem;
+  border: none;
+  margin: 1%;
+  right: 0;
+}
+
+.plus {
+  font-size: 3rem;
+  cursor: pointer;
+  top: 5px;
+  position: relative;
+}
+
+
+.commentForm {
+  position: relative;
+  height: 8vh;
+  width: 8.33%;
+  left: 0;
+  text-align: center;
+  display: inline-block;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.55);
+}
+
+.modalForm {
+  position: relative;
+  width: 400px;
+  top: 15%;
+  border-radius: 3px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: papayawhip;
+  justify-content: space-between;
+  z-index: 10000;
+}
+
+.modalTitle {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 1px;
+  width: 100%;
+  margin: 5px 0 5px 0;
+  left: 0;
+}
+
+.modalFormAuthor {
+  position: relative;
+  min-width: 95%;
+  max-width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3px;
+  margin-bottom: 5px;
+}
+
+.modalFormText {
+  min-width: 95%;
+  max-width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.modalFormPost {
+  min-width: 96%;
+  height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 1rem;
+  background-color: #A3CDFD;
+  border-radius: 3px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: .055rem;
+  border: none;
+}
+
+.modalFormPost2 {
+  min-width: 96%;
+  height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 1rem;
+  background-color: #3792fb;
+  border-radius: 3px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: .055rem;
+  border: none;
+}
+
+.modalClose {
+  min-width: 96%;
+  height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+  font-size: 1rem;
+  background-color: #ff3333;
+  border-radius: 3px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: .055rem;
+  border: none;
+  bottom: 0;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,.6);
+}
+
+.commentInfo {
+  position: relative;
+  width: 8.33%;
+  right: 0;
+  text-align: center;
+  display: inline-block;
+}
+
+.icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+  top: 5px;
+  position: relative;
+  font-weight: bold;
+}
+
+.infoModal {
+  position: relative;
+  top: 25%;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: papayawhip;
+  border-radius: 3px;
+  font-family: Helvetica, sans-serif;
+  border: none;
+  z-index: 10000;
+}
+
+.infoText {
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 20px;
+  padding-top: 30px;
+}
+
+.infoClose {
+  display: inline;
+  float: right;
+  right: 7px;
+  top: 2px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  position: relative;
+  font-size: 1.3rem;
+}
+
+.infoOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,.6);
+}
+
+@media only screen and (max-width : 480px) {
+  .commentHeader {
+    width: 95%;
+  }
+
+  .commentList {
+    max-height: 90vh;
+    width: 95%;
+  }
+
+  .comment {
+    margin: .4%;
+  }
+
+  .footer {
+    height: 0;
+  }
+
+  .plus {
+    top: 0;
+  }
+
+  .icon {
+    top: 0;
+  }
+
+  .author {
+    display: block;
+    float: none;
+  }
+
+  .text {
+    margin-top: 5px;
+  }
+
+  .date {
+    display: block;
+    float: none;
+    margin-top: 5px;
+  }
+
+  .editDate {
+    display: block;
+    float: none;
+    margin-top: 0;
+  }
+
+  .commentFormAuthor {
+    width: 94%;
+    max-width: 94%;
+  }
+
+  .commentFormText {
+    width: 94%;
+    max-width: 94%;
+    margin-left: 1%;
+  }
+
+  .commentFormPost {
+    width: auto;
+    max-width: 95%;
+  }
+
+  .commentFormPost2 {
+    width: auto;
+    max-width: 95%;
+  }
+
+  .commentFormClose {
+    width: auto;
+    max-width: 95%;
+  }
+
+  .title {
+    letter-spacing: 0;
+  } 
+
+  .modalForm {
+    width: 90%;
+  }
+
+  .infoModal {
+    width: 90%;
+  }
+
+  .infoClose {
+    right: 4%;  
+  }
+}
